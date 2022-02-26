@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Counter</title>
     <style>
-      *{
+      * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -25,18 +25,22 @@
       <h1>0</h1>
       <div>
         <button class="dc">Decrease</button>
-      <button class="res">Reset</button>
-      <button class="inc">Increase</button>
+        <button class="res">Reset</button>
+        <button class="inc">Increase</button>
       </div>
     </div>
     <!-- <h1>hey, am testing my hand</h1>
     <button class="btn">click me</button> -->
 
     <script>
+      let bgrc = document.body
       let bee = document.querySelector('h1')
       let dec = document.querySelector('.dc')
       function wk() {
         bee.textContent--
+        if(bee.textContent < 0){
+          bgrc.style.backgroundColor = 'yellow'
+        }
       }
 
       dec.addEventListener('click', wk)
@@ -46,6 +50,10 @@
 
       function wks() {
         bee.textContent = 0
+        if(bee.textContent == 0){
+          bgrc.style.backgroundColor = 'red'
+        }
+        
       }
 
       decs.addEventListener('click', wks)
@@ -54,6 +62,9 @@
 
       function wkss() {
         bee.textContent++
+        if(bee.textContent > 0){
+          bgrc.style.backgroundColor = 'green'
+        }
       }
 
       decss.addEventListener('click', wkss)
